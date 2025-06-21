@@ -4,53 +4,130 @@ import Icon from "@/components/ui/icon";
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-emerald-900 overflow-hidden">
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-black/20"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
           <div className="animate-fade-in">
-            <h1 className="text-4xl lg:text-6xl font-montserrat font-bold text-gray-900 mb-6">
-              Откройте мир птиц вместе с нами
+            <div className="w-16 h-0.5 bg-orange-400 mb-8"></div>
+
+            <h1 className="text-5xl lg:text-7xl font-light text-white mb-6">
+              Amazing
             </h1>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              Присоединяйтесь к орнитологическому сообществу, делитесь
-              наблюдениями с GPS-координатами и помогайте науке изучать птиц
-              нашей планеты.
+            <h1 className="text-5xl lg:text-7xl font-bold text-orange-400 mb-8 tracking-wide">
+              NORWAY
+            </h1>
+
+            <p className="text-lg text-white/80 mb-12 leading-relaxed max-w-md">
+              Visit Norway, you will never regret it! This is something
+              incredible - fantastic nature, fjords, fancy outlines of the
+              coast...
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/map">
-                <Button size="lg" className="w-full sm:w-auto">
-                  <Icon name="MapPin" size={20} />
-                  Начать наблюдение
-                </Button>
-              </Link>
-              <Link to="/library">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto"
-                >
-                  <Icon name="Book" size={20} />
-                  Библиотека видов
-                </Button>
-              </Link>
+
+            <div className="relative inline-block">
+              <div className="absolute -inset-1 bg-orange-400 rounded-full"></div>
+              <Button className="relative bg-orange-400 hover:bg-orange-500 text-black font-medium px-8 py-6 rounded-full">
+                BOOK A TOUR
+              </Button>
             </div>
           </div>
 
           <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=600&h=400&fit=crop"
-              alt="Птица в естественной среде"
-              className="rounded-2xl shadow-2xl w-full h-96 object-cover"
-            />
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-              <div className="flex items-center space-x-3">
-                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium">
-                  1,247+ активных наблюдений
-                </span>
+            {/* Hexagonal photo grid */}
+            <div className="grid grid-cols-2 gap-4 max-w-md ml-auto">
+              <div className="relative">
+                <div
+                  className="hexagon-clip bg-cover bg-center h-32 w-32 ml-8"
+                  style={{
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=300&h=300&fit=crop')",
+                  }}
+                ></div>
+              </div>
+              <div className="relative">
+                <div
+                  className="hexagon-clip bg-cover bg-center h-32 w-32"
+                  style={{
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop')",
+                  }}
+                ></div>
+              </div>
+              <div className="relative">
+                <div
+                  className="hexagon-clip bg-cover bg-center h-32 w-32"
+                  style={{
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=300&h=300&fit=crop')",
+                  }}
+                ></div>
+              </div>
+              <div className="relative">
+                <div
+                  className="hexagon-clip bg-cover bg-center h-32 w-32 ml-8"
+                  style={{
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=300&h=300&fit=crop')",
+                  }}
+                ></div>
+              </div>
+              <div className="relative col-span-2">
+                <div
+                  className="hexagon-clip bg-cover bg-center h-32 w-32 mx-auto"
+                  style={{
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1501436513145-30f24e19fcc4?w=300&h=300&fit=crop')",
+                  }}
+                ></div>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Social media icons */}
+        <div className="absolute bottom-8 left-4 sm:left-8 flex space-x-6">
+          <a
+            href="#"
+            className="text-white/60 hover:text-white transition-colors"
+          >
+            <span className="text-xs">Facebook</span>
+          </a>
+          <a
+            href="#"
+            className="text-white/60 hover:text-white transition-colors"
+          >
+            <span className="text-xs">Twitter</span>
+          </a>
+          <a
+            href="#"
+            className="text-white/60 hover:text-white transition-colors"
+          >
+            <span className="text-xs">Instagram</span>
+          </a>
+          <a
+            href="#"
+            className="text-white/60 hover:text-white transition-colors"
+          >
+            <span className="text-xs">Pinterest</span>
+          </a>
+          <a
+            href="#"
+            className="text-white/60 hover:text-white transition-colors"
+          >
+            <span className="text-xs">Google+</span>
+          </a>
+        </div>
+
+        {/* Navigation arrows */}
+        <div className="absolute bottom-8 right-4 sm:right-8 flex space-x-4">
+          <button className="text-white/60 hover:text-white transition-colors">
+            <Icon name="ChevronLeft" size={24} />
+          </button>
+          <button className="text-white/60 hover:text-white transition-colors">
+            <Icon name="ChevronRight" size={24} />
+          </button>
         </div>
       </div>
     </section>
